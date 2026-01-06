@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import src.model.Tarefa;
 
-import src.model.Tarefa;
-
 public class TaskManager {
 
     private static TaskManager instance;
