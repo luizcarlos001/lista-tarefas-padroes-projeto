@@ -27,4 +27,22 @@ public class TaskManager {
     public List<Tarefa> listarTarefas() {
         return tarefas;
     }
-}
+    public boolean removerTarefa(int index) {
+        if (index >= 0 && index < tarefas.size()) {
+            tarefas.remove(index);
+            return true;
+        }
+        return false;
+    }
+
+    public Tarefa getTarefa(int index) {
+        if (index >= 0 && index < tarefas.size()) {
+            return tarefas.get(index);
+        }
+        return null;
+    }
+
+    public int quantidadeTarefas() {
+        return tarefas.size();
+    }
+}    
