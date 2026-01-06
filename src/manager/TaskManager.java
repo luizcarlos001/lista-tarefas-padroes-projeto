@@ -2,6 +2,7 @@ package src.manager;
 
 import java.util.ArrayList;
 import java.util.List;
+import src.model.Tarefa;
 
 import src.model.Tarefa;
 
