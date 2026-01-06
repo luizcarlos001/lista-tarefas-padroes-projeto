@@ -1,16 +1,24 @@
 package src.manager;
 
-import src.model.Tarefa;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import src.model.Tarefa;
+
 public class TaskManager {
 
+    private static TaskManager instance;
     private List<Tarefa> tarefas;
 
-    public TaskManager() {
+    private TaskManager() {
         tarefas = new ArrayList<>();
+    }
+
+    public static TaskManager getInstance() {
+        if (instance == null) {
+            instance = new TaskManager();
+        }
+        return instance;
     }
 
     public void adicionarTarefa(Tarefa tarefa) {
