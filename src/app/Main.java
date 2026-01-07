@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        TaskManager manager = TaskManager.getInstance(); 
+        TaskManager manager = TaskManager.getInstance();
 
         int opcao = -1;
 
@@ -21,6 +21,7 @@ public class Main {
             System.out.println("==============================");
             System.out.println("1 - Adicionar tarefa");
             System.out.println("2 - Listar tarefas");
+            System.out.println("3 - Remover tarefa");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
 
@@ -49,6 +50,18 @@ public class Main {
                             for (int i = 0; i < tarefas.size(); i++) {
                                 System.out.println("[" + i + "] " + tarefas.get(i));
                             }
+                        }
+                    }
+
+                    case 3 -> {
+                        System.out.println("\n--- REMOVER TAREFA ---");
+                        System.out.print("Informe o índice da tarefa: ");
+                        int idx = Integer.parseInt(scanner.nextLine());
+
+                        if (manager.removerTarefa(idx)) {
+                            System.out.println("Tarefa removida com sucesso.");
+                        } else {
+                            System.out.println("Índice inválido.");
                         }
                     }
 
