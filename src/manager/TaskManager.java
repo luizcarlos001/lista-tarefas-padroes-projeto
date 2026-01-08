@@ -2,11 +2,13 @@ package src.manager;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import src.model.Tarefa;
 
 public class TaskManager {
 
     private static TaskManager instance;
+
     private List<Tarefa> tarefas;
 
     private TaskManager() {
@@ -27,6 +29,7 @@ public class TaskManager {
     public List<Tarefa> listarTarefas() {
         return tarefas;
     }
+
     public boolean removerTarefa(int index) {
         if (index >= 0 && index < tarefas.size()) {
             tarefas.remove(index);
@@ -45,4 +48,4 @@ public class TaskManager {
     public int quantidadeTarefas() {
         return tarefas.size();
     }
-}    
+}
