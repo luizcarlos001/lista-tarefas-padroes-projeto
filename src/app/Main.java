@@ -2,6 +2,7 @@ package src.app;
 
 import java.util.List;
 import java.util.Scanner;
+
 import src.manager.TaskManager;
 import src.model.Tarefa;
 import src.strategy.DisponivelStrategy;
@@ -40,6 +41,11 @@ public class Main {
                         System.out.print("Nome: ");
                         String nome = scanner.nextLine();
 
+                        if (nome.trim().isEmpty()) {
+                            System.out.println("O nome da tarefa não pode ser vazio.");
+                            break;
+                        }
+
                         System.out.print("Descrição: ");
                         String desc = scanner.nextLine();
 
@@ -73,7 +79,7 @@ public class Main {
                         if (manager.removerTarefa(idxRemover)) {
                             System.out.println("Tarefa removida com sucesso.");
                         } else {
-                            System.out.println("Índice inválido.");
+                            System.out.println("Índice inválido. Escolha um número da lista.");
                         }
                         break;
 
@@ -94,7 +100,7 @@ public class Main {
 
                         Tarefa tarefa = manager.getTarefa(idxStatus);
                         if (tarefa == null) {
-                            System.out.println("Índice inválido.");
+                            System.out.println("Índice inválido. Escolha um número da lista.");
                             break;
                         }
 
@@ -120,6 +126,8 @@ public class Main {
                         }
 
                         strategy.alterarStatus(tarefa);
+                        manager.salvarAlteracao();
+
                         System.out.println("Status alterado com sucesso.");
                         System.out.println("Atual: " + tarefa);
                         break;
