@@ -3,6 +3,7 @@ package src.manager;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+
 import src.model.Status;
 import src.model.Tarefa;
 
@@ -54,9 +55,9 @@ public class TaskManager {
         return tarefas.size();
     }
 
-    /* =======================
-       Persistência em Arquivo
-       ======================= */
+    // ======================
+    // Persistência em Arquivo
+    // ======================
 
     private void salvarNoArquivo() {
         try (PrintWriter writer = new PrintWriter(new FileWriter(ARQUIVO))) {
@@ -96,7 +97,6 @@ public class TaskManager {
         }
     }
 
-    /* Chame este método após alterar status via Strategy */
     public void salvarAlteracao() {
         salvarNoArquivo();
     }
