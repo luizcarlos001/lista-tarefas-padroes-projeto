@@ -7,8 +7,11 @@ public class MainSwing {
 
     public static void main(String[] args) {
 
-        SwingUtilities.invokeLater(() -> {
-            new TelaPrincipal().setVisible(true);
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new TelaPrincipal().setVisible(true);
+            }
         });
 
     }
